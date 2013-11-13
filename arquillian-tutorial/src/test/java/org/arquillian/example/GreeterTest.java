@@ -1,7 +1,5 @@
 package org.arquillian.example;
 
-import static org.junit.Assert.fail;
-
 import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -22,7 +20,7 @@ public class GreeterTest {
 	@Deployment
 	public static JavaArchive createDeployment() {
 		JavaArchive jar = ShrinkWrap.create(JavaArchive.class)
-				.addClass(Greeter.class)
+				.addClasses(Greeter.class,PhraseBuilder.class)
 				.addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
 		System.out.println(jar.toString(true));
 		return jar;
