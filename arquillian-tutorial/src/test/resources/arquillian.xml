@@ -9,7 +9,7 @@
         <property name="deploymentExportPath">target/deployments</property>
     </engine>
 	
-	<container qualifier="jbossas-managed" default="true" >
+	<container qualifier="jbossas-managed" >
 		<configuration>
 			<property name="jbossHome">/data/work/development/tools/jboss-as-7.1.1.Final</property>
 <!-- 			<property name="javaVmArguments">-Xmx512m -XX:MaxPermSize=128m -->
@@ -25,5 +25,13 @@
 			<property name="target">server</property>
 		</configuration>
 	</container>
+	
+	<container qualifier="glassfish-embedded" default="true" > 
+     <configuration> 
+          <property name="resourcesXml"> 
+          src/test/resources/glassfish-embedded/glassfish-resources.xml 
+          </property> 
+     </configuration> 
+</container>
     
 </arquillian>
