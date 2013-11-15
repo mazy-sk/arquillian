@@ -2,9 +2,9 @@ package org.arquillian.example.msg;
 
 import javax.annotation.Resource;
 import javax.ejb.ActivationConfigProperty;
-import javax.ejb.EJB;
 import javax.ejb.MessageDriven;
 import javax.ejb.MessageDrivenContext;
+import javax.inject.Inject;
 import javax.jms.JMSException;
 import javax.jms.Message;
 import javax.jms.MessageListener;
@@ -20,7 +20,7 @@ public class MessageConsumer implements MessageListener {
 	@Resource
 	private MessageDrivenContext mdc;
 	
-	@EJB
+	@Inject
 	private MessageRepository messageRepo;
 	
 	@Override

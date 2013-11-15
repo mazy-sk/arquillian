@@ -1,6 +1,5 @@
 package org.arquillian.example;
 
-import javax.ejb.EJB;
 import javax.inject.Inject;
 
 import org.jboss.arquillian.container.test.api.Deployment;
@@ -19,7 +18,7 @@ public class BasketTest {
 	@Inject
 	private Basket basket;
 	
-	@EJB
+	@Inject
 	private OrderRepository orderRepo;
 	
 	@Deployment
